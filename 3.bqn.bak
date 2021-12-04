@@ -12,12 +12,12 @@ Mode ←{(+´𝕩)≥(≠𝕩)-+´𝕩}
   𝕊 b‿i:
   m ← i⊑Mode b
   ⟨(m=i⊑¨b)/b,i+1⟩
-} _whil_ {1≠≠⊑𝕩} inp‿0
+} _while_ {1≠≠⊑𝕩} inp‿0
 
 •Show co2 ← ⊑⊑{
   𝕊 b‿i:
   m ← i⊑¬Mode b
   ⟨(m=i⊑¨b)/b,i+1⟩
-} _whil_ {1≠≠⊑𝕩} inp‿0
+} _while_ {1≠≠⊑𝕩} inp‿0
 
 •Show oxy ×○B2D co2
