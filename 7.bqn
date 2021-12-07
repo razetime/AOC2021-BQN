@@ -1,7 +1,7 @@
 inp ← •BQN "⟩"∾˜"⟨"∾⊑•FLines "7.txt"
 
 #Part 1:
-MinSum ← {⊑𝕩/˜(⊢=⌊´)𝕩}+´˘
+MinSum ← ⌊´+´˘
 •Show MinSum |-⌜˜inp
 
 # Part 2:
