@@ -1,3 +1,5 @@
+#!/usr/bin/env cbqn
+
 inp ← >'0'-˜•FLines "9.txt"
 
 # Part 1:

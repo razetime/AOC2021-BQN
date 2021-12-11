@@ -1,3 +1,5 @@
+#!/usr/bin/env cbqn
+
 inp ← •FLines "10.txt"
 
 strs ← (""{
