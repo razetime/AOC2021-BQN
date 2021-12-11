@@ -1,4 +1,4 @@
-#!/usr.bin.env cbqn
+#!/usr/bin/env cbqn
 
 ⟨Pad⟩ ← •Import "lib.bqn"
 
