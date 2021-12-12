@@ -1,4 +1,6 @@
-day ← •GetLine@
+#!/usr/bin/env cbqn
+
+day ← ⊑•args
 
 code ← (⊣∾(@+10)∾⊢)´ "    "⊸∾¨ •FLines day ∾ ".bqn"
 

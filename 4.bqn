@@ -1,5 +1,5 @@
 # Day 4
-⟨Split, _while⟩ ← •Import "lib.bqn"
+⟨Split⟩ ← •Import "lib.bqn"
 
 inp ← •FLines "4.txt"
 
@@ -16,7 +16,7 @@ Bingo ← {∨´¯5=+´˘∾⟜⍉𝕩}
   𝕊 b‿i:
   n ← i⊑nums
   ⟨b-(n+1)×n=b, i+1⟩
-} _while_ { ¬∨´Bingo¨⊑𝕩 } ⟨boards, 0⟩ 
+} •_while_ { ¬∨´Bingo¨⊑𝕩 } ⟨boards, 0⟩ 
 
 # Part 2:
 •Show {
@@ -27,7 +27,7 @@ Bingo ← {∨´¯5=+´˘∾⟜⍉𝕩}
   𝕊 b‿i:
   n ← i⊑nums
   ⟨b-(n+1)×n=b, i+1⟩
-} _while_ {
+} •_while_ {
   𝕊 b‿i:
   n ← i⊑nums
   ¬∧´Bingo¨b-(n+1)×n=b
