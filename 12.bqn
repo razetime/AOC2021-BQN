@@ -19,12 +19,11 @@ conns ←{(nodes⊐⊑¨𝕩)⊔¯1⊑¨𝕩}inp∾⌽¨inp
   𝕨 𝕊 "end": 1;
   w Find x:
   next ← (⊑nodes⊐⋈𝕩)⊑conns
-  #•Show w‿x
   sum ← +´0=∊w(¬∘∊/⊣)⟨"start"⟩ 
   { 
     (x≡"start")∧w≢⟨"start"⟩ ? 0;
-	sum > 1 ? 0;
+    sum > 1 ? 0;
     1=sum ? +´{(w∾('a'≤⊑x)⥊⋈x) Find 𝕩}¨next(¬∘∊/⊣)w;
-	0=sum ? +´{(w∾('a'≤⊑x)⥊⋈x) Find 𝕩}¨next
+    0=sum ? +´{(w∾('a'≤⊑x)⥊⋈x) Find 𝕩}¨next
   }
 }"start"
