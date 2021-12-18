@@ -1,7 +1,5 @@
 #!/usr/bin/env cbqn
 
-⟨_fix⟩ ← •Import "lib.bqn"
-
 inp ← {•BQN'⟩'¨⌾((']'=𝕩)⊸/)'⟨'¨⌾(('['=𝕩)⊸/)𝕩}¨•FLines "18.txt"
 
 Mag ← {𝕊 f‿s: +´3‿2×𝕊¨f‿s;𝕩}
@@ -23,22 +21,14 @@ Explode ← {
   l‿r ←  arr⊑´⌽path
   left ← /path
   right ← /¬path
-  {
-    ×≠left ?
-    left ↩ 0∾˜path↑˜¯1⊑left
-    left ∾↩ 1+/⋈ 1 Dig arr⊑´⌽left
-    f ← {l⊸+} Expr left, arr F↩;
-    @
+  _mod ← {
+    b‿side func _𝕣 arr:
+    ×≠side ?
+    side ↩ (¬b)∾˜path↑˜¯1⊑side
+    side ∾↩ b+/⋈ b Dig 𝕩⊑´⌽side
+   (func Expr side){𝕎𝕩}𝕩;𝕩
   }
-  {
-    ×≠right ?
-    right ↩ 1∾˜path↑˜¯1⊑right
-    right ∾↩ /⋈0 Dig arr⊑´⌽right
-    f ← {r⊸+} Expr right, arr F↩;
-    @
-  }
-  f ← 0 Expr path
-  F arr
+  (0 Expr path){𝕎𝕩}0‿right r⊸+ _mod 1‿left l⊸+ _mod arr
 }
 
 Split ← {
@@ -50,9 +40,12 @@ Split ← {
     𝕩
   } 𝕩
 }
-Exb  ← 4<≡
+Exb ← 4<≡
 Spb ← ∨´9<∾⍟(-⟜1≡) 
  
-Add ← {{ Split⍟((¬Exb 𝕩)⊸∧Spb) Explode⍟Exb 𝕩} •_while_ (Exb∨Spb) 𝕨⋈𝕩}
+Add ← { Split⍟((¬Exb 𝕩)⊸∧Spb) Explode⍟Exb 𝕩} •_while_ (Exb∨Spb) ⋈
+
+# Part 1:
 •Show Mag Add˜´⌽inp
+# Part 2:
 •Show ⌈´⥊Mag∘Add⌜˜inp
