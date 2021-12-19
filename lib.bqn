@@ -8,3 +8,5 @@ Range ⇐ {𝕨+(×a)×↕1+|a←𝕩-𝕨}
 Pad ⇐ {⌽⍉𝕨∾˘𝕩}⍟4
 _fix ⇐ {𝔽∘⊢⍟≢⟜𝔽_𝕣∘⊢⍟≢⟜𝔽𝕩}
 S ⇐ {𝕩⊣(•Show •Repr)¨𝕨⋈𝕩}
+SR ⇐ •Show •Repr
+MatMul ⇐ +˝∘×⎉1‿∞
