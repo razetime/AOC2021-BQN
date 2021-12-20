@@ -1,6 +1,6 @@
 #!/usr/bin/env cbqn
 
-⟨Split, MatMul, SR⟩ ← •Import "lib.bqn"
+⟨Split, SR⟩ ← •Import "lib.bqn"
 
 inp ← ({•BQN'⟩'∾˜'⟨'∾𝕩}¨1⊸↓)¨(<"")Split•FLines "19.txt"
 
