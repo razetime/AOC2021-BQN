@@ -1,5 +1,5 @@
 #!/usr/bin/env cbqn
-⟨Split, B2D, _base, Range, Pad, _fix, SR, MatMul⟩ ← •Import "lib.bqn"
+⟨Split⟩ ← •Import "lib.bqn"
 
 inp ← {⟨'n'=1⊑𝕩, {•BQN¨0‿¯1⊏'.'Split 2↓𝕩}¨',' Split 1⊑' 'Split𝕩⟩}¨•FLines "22.txt"
 
