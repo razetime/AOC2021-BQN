@@ -1,6 +1,4 @@
-#!/user/bin/env cbqn
-
-⟨Split, B2D, _base, Range, Pad, _fix, SR, MatMul⟩ ← •Import "lib.bqn"
+#!/usr/bin/env cbqn
 
 inp ← ".>v"⊐>•FLines "25.txt"
 
@@ -13,9 +11,7 @@ Disp ← {•Show ".>v"⊏˜+´0‿1‿2×𝕩}
   e ↩ me∨e-1⌽˘me # new east
   n ↩ ¬e∨s
   ms ← n∧¯1⌽s # moved points
-  s ↩ ms∨s-1⌽ms # new east
+  s ↩ ms∨s-1⌽ms # new south
   n ↩ ¬e∨s
   {a ≡ n‿e‿s ? 1; 1 + Move n‿e‿s} 
 } (↕3)=<inp
-
-#•Show i-2
